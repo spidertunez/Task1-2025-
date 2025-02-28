@@ -1,0 +1,50 @@
+// Name: Mahmoud Mohamed Mahmoud Abdelkader Fadl
+// Section: 9
+namespace Selection_Sort
+{
+    using System;
+
+    class SelectionSortExample
+    {
+        
+        static void SelectionSort(int[] array)
+        {
+            int size = array.Length;
+
+            for (int i = 0; i < size - 1; i++)
+            {
+                int minIndex = i;
+
+                
+                for (int j = i + 1; j < size; j++)
+                {
+                    if (array[j] < array[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+
+                
+                int temp = array[i];
+                array[i] = array[minIndex];
+                array[minIndex] = temp;
+            }
+        }
+
+        
+        static void Main()
+        {
+            Console.WriteLine("Name: Mahmoud Mohamed Mahmoud Abdelkader Fadl\nSection: 9");
+            int[] arr = { -2, 45, 0, 11, -9, 88, -97, 60, 747 };
+
+            Console.WriteLine("Original array:");
+            Console.WriteLine(string.Join(", ", arr));
+
+            SelectionSort(arr);
+
+            Console.WriteLine("Sorted array:");
+            Console.WriteLine(string.Join(", ", arr));
+        }
+    }
+
+}
